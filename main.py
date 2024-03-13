@@ -13,11 +13,15 @@ def get_db_connection():
 def main():
     return render_template('index.html')
 
-@app.route('/add', methods = ['GET', 'POST']) #Для того, щоб можна було заповнювати магазин товаром динамічно через форму
+@app.route('/add', methods = ['GET', 'POST'])
 def add_model():
+    connection = get_db_connection()
+    cursor = connection.cursor()
     if request.method == 'POST':
         name = request.form['name']
+        print(name)
         description = request.form['description']
+        print(description)
         price = request.form['price']
         photo1 = request.form['photo1']
         photo2 = request.form['photo2']
@@ -26,8 +30,7 @@ def add_model():
         photo5 = request.form['photo5']
         photo6 = request.form['photo6']
         photo7 = request.form['photo7']
-        connection = get_db_connection()
-        connection.execute("INSERT INTO vzuta.db (name,price,description,photo1,photo2,photo3,photo4,photo5,photo6,photo7) VALUES (?,?,?,?,?,?,?,?,?,?)", (name,price,description,photo1,photo2,photo3,photo4,photo5,photo6,photo7))
+        cursor.execute("INSERT INTO shoes (name,price,description,photo1,photo2,photo3,photo4,photo5,photo6,photo7) VALUES (?,?,?,?,?,?,?,?,?,?)", (name,price,description,photo1,photo2,photo3,photo4,photo5,photo6,photo7))
         connection.commit()
         connection.close()
         return render_template("index.html")
@@ -35,8 +38,7 @@ def add_model():
     return render_template('add_model_form.html')
 
 
-# Запусти і провір по поводу корректності, я честно не знаю чому помилка вибиває, хоча я вроді все правильно підставив
 
 
 
-app.run(port=5000, debug=True)
+app.run(port=5000, host="0.0.0.0", debug=True)

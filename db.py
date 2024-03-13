@@ -8,13 +8,13 @@ try:
                                     name TEXT,
                                     price INTEGER,
                                     description TEXT,
-                                    photo1 TEXT,
-                                    photo2 TEXT,
-                                    photo3 TEXT,
-                                    photo4 TEXT,
-                                    photo5 TEXT,
-                                    photo6 TEXT,
-                                    photo7 TEXT); '''
+                                    photo1 BLOB,
+                                    photo2 BLOB,
+                                    photo3 BLOB,
+                                    photo4 BLOB,
+                                    photo5 BLOB,
+                                    photo6 BLOB,
+                                    photo7 BLOB); '''
     cursor = sqlite_connection.cursor()
     cursor.execute(sqlite_create_table_query)
     sqlite_connection.commit()

@@ -11,6 +11,24 @@
     </style>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{url_for('main')}}">
+            <img src="static/logo/free-icon-font-home-3917743.png" alt="Logo" width="30" height="30">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <a href="{{ url_for('add_model') }}">
+                <img src="static/logo/free-icon-font-add-3914248.png" alt="Logo" width="30" height="30">
+            </a>
+        </div>
+    </nav>
+
     <div class="container">
         <h2>Додати нове взуття</h2>
         <form method="post" enctype="multipart/form-data">
@@ -29,40 +47,40 @@
                 <label for="price">Ціна:</label>
                 <input type="number" id="price" name="price" class="form-control" required>
             </div>
-
+        <h1>Конвертуйте фотографії <a href="https://www.aconvert.com/ru/image/">тут</a></h1>
             <div class="form-group">
                 <label for="photo1">Фото 1:</label>
-                <input type="file" id="photo1" name="photo1" accept="image/*" class="form-control-file" required>
+                <input type="text" id="photo1" name="photo1" accept="image/*" class="form-control-file" required>
             </div>
 
             <div class="form-group">
                 <label for="photo2">Фото 2:</label>
-                <input type="file" id="photo2" name="photo2" accept="image/*" class="form-control-file">
+                <input type="text" id="photo2" name="photo2" accept="image/*" class="form-control-file">
             </div>
 
             <div class="form-group">
                 <label for="photo3">Фото 3:</label>
-                <input type="file" id="photo3" name="photo3" accept="image/*" class="form-control-file">
+                <input type="text" id="photo3" name="photo3" accept="image/*" class="form-control-file">
             </div>
 
             <div class="form-group">
                 <label for="photo4">Фото 4:</label>
-                <input type="file" id="photo4" name="photo4" accept="image/*" class="form-control-file">
+                <input type="text" id="photo4" name="photo4" accept="image/*" class="form-control-file">
             </div>
 
             <div class="form-group">
                 <label for="photo5">Фото 5:</label>
-                <input type="file" id="photo5" name="photo5" accept="image/*" class="form-control-file">
+                <input type="text" id="photo5" name="photo5" accept="image/*" class="form-control-file">
             </div>
 
             <div class="form-group">
                 <label for="photo6">Фото 6:</label>
-                <input type="file" id="photo6" name="photo6" accept="image/*" class="form-control-file">
+                <input type="text" id="photo6" name="photo6" accept="image/*" class="form-control-file">
             </div>
 
             <div class="form-group">
                 <label for="photo7">Фото 7:</label>
-                <input type="file" id="photo7" name="photo7" accept="image/*" class="form-control-file">
+                <input type="text" id="photo7" name="photo7" accept="image/*" class="form-control-file">
             </div>
 
             <div class="form-group">
