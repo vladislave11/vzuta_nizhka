@@ -11,7 +11,18 @@ def get_db_connection():
 
 @app.route('/')
 def main():
-    return render_template('index.html')
+    connection = get_db_connection()
+    shoes = connection.execute('SELECT * FROM shoes')
+
+    return render_template('index.html',
+                           shoe = shoes)
+
+
+connection = get_db_connection()
+shoe = connection.execute('SELECT * FROM shoes')
+for i in shoe:
+    print(i['name'])
+
 
 @app.route('/add', methods = ['GET', 'POST'])
 def add_model():
