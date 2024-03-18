@@ -8,6 +8,7 @@ try:
                                     name TEXT,
                                     price INTEGER,
                                     description TEXT,
+                                    type TEXT,
                                     photo1 BLOB,
                                     photo2 BLOB,
                                     photo3 BLOB,

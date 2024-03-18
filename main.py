@@ -54,21 +54,13 @@ def main():
     return render_template('index.html', shoes = shoes, length = length)
 
 
-
-
-
 print(shoes)
-
-
-
-
-
-
 
 
 
 @app.route('/add', methods = ['GET', 'POST'])
 def add_model():
+    length = len(shoes['name'])
     connection = get_db_connection()
     cursor = connection.cursor()
     if request.method == 'POST':
@@ -77,6 +69,7 @@ def add_model():
         description = request.form['description']
         print(description)
         price = request.form['price']
+        type = request.form['category']
         photo1 = request.form['photo1']
         photo2 = request.form['photo2']
         photo3 = request.form['photo3']
@@ -84,10 +77,10 @@ def add_model():
         photo5 = request.form['photo5']
         photo6 = request.form['photo6']
         photo7 = request.form['photo7']
-        cursor.execute("INSERT INTO shoes (name,price,description,photo1,photo2,photo3,photo4,photo5,photo6,photo7) VALUES (?,?,?,?,?,?,?,?,?,?)", (name,price,description,photo1,photo2,photo3,photo4,photo5,photo6,photo7))
+        cursor.execute("INSERT INTO shoes (name,price,description,type,photo1,photo2,photo3,photo4,photo5,photo6,photo7) VALUES (?,?,?,?,?,?,?,?,?,?,?)", (name,price,description,type,photo1,photo2,photo3,photo4,photo5,photo6,photo7))
         connection.commit()
         connection.close()
-        return render_template("index.html")
+        return render_template("index.html", length = length, shoes = shoes)
 
     return render_template('add_model_form.html')
 
