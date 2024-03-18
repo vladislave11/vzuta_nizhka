@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Додати взуття</title>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <img src="{{ url_for('static', filename='static/logo/g_301907970_ZVaPcSGe9rgYgRMRGUcbf91YxNwB7d2W.jpg') }}" />
     <style>
         .form-group {
             margin-bottom: 20px
@@ -47,7 +47,20 @@
                 <label for="price">Ціна:</label>
                 <input type="number" id="price" name="price" class="form-control" required>
             </div>
-        <h1>Конвертуйте фотографії <a href="https://im.ge/?gad_source=1&gclid=Cj0KCQjwwMqvBhCtARIsAIXsZpZztkXcSacSgI0G6rstAFiGdcCqJ5dlgvvtuktn1aaeHXJN1XAWbeMaAmf2EALw_wcB">тут</a></h1>
+
+            <div class="form-group">
+                <label for="category">Категорія:</label>
+                <select id="category" name="category" class="form-control" required>
+                    <option value="Кросівки">Кросівки</option>
+                    <option value="Шльопанці">Шльопанці</option>
+                    <option value="Лофери">Лофери</option>
+                    <option value="Сліпони">Сліпони</option>
+                    <option value="Босоніжки">Босоніжки</option>
+                    <option value="Туфлі">Туфлі</option>
+                </select>
+            </div>
+
+            <h1>Конвертуйте фотографії <a href="https://im.ge/?gad_source=1&gclid=Cj0KCQjwwMqvBhCtARIsAIXsZpZztkXcSacSgI0G6rstAFiGdcCqJ5dlgvvtuktn1aaeHXJN1XAWbeMaAmf2EALw_wcB" target="_blank">тут</a></h1>
             <div class="form-group">
                 <label for="photo1">Фото 1:</label>
                 <input type="text" id="photo1" name="photo1" accept="image/*" class="form-control-file" required>
