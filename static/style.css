@@ -1,3 +1,27 @@
+.carousel {
+            height: 900px !important;
+        }
+        .carousel-inner img {
+        height: 1200px !important;
+            margin: 0 auto;
+        }
+        .carousel-indicators li {
+            border-color: #000;
+        }
+        .carousel-indicators .active {
+            background-color: #000;
+        }
+        .navbar-brand img {
+            margin-right: 120px;
+        }
+        .navbar-nav {
+            margin-right: 45px;
+        }
+        .nav-link {
+            font-size: 125%;
+        }
+
 body {
-    background-image: url(g_301907970_ZVaPcSGe9rgYgRMRGUcbf91YxNwB7d2W.jpg)
+    background-image: url("https://img.freepik.com/free-vector/tropical-leaves-background-for-zoom_23-2148580778.jpg") !important;
 }
+
