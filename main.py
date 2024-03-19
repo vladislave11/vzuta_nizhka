@@ -3,7 +3,6 @@ import sqlite3
 
 app = Flask(__name__)
 
-
 def get_db_connection():
     connection = sqlite3.connect(database='vzuta.db')
     connection.row_factory = sqlite3.Row
@@ -15,6 +14,7 @@ shoes = {}
 names = []
 prices = []
 descrips = []
+shoe_type = []
 photo1s = []
 photo2s = []
 photo3s = []
@@ -25,26 +25,28 @@ photo7s = []
 
 
 
-for i in shoe:
-    names.append(i['name'])
+for element in shoe:
+    names.append(element['name'])
     shoes['name'] = names
-    prices.append(i['price'])
+    prices.append(element['price'])
     shoes['price'] = prices
-    descrips.append(i['description'])
+    descrips.append(element['description'])
     shoes['descriptions'] = descrips
-    photo1s.append(i['photo1'])
+    shoe_type.append(element['type'])
+    shoes['type'] = shoe_type
+    photo1s.append(element['photo1'])
     shoes['photo1'] = photo1s
-    photo2s.append(i['photo2'])
+    photo2s.append(element['photo2'])
     shoes['photo2'] = photo2s
-    photo3s.append(i['photo3'])
+    photo3s.append(element['photo3'])
     shoes['photo3'] = photo3s
-    photo4s.append(i['photo4'])
+    photo4s.append(element['photo4'])
     shoes['photo4'] = photo4s
-    photo5s.append(i['photo5'])
+    photo5s.append(element['photo5'])
     shoes['photo5'] = photo5s
-    photo6s.append(i['photo6'])
+    photo6s.append(element['photo6'])
     shoes['photo6'] = photo6s
-    photo7s.append(i['photo7'])
+    photo7s.append(element['photo7'])
     shoes['photo7'] = photo7s
 
 
@@ -65,9 +67,7 @@ def add_model():
     cursor = connection.cursor()
     if request.method == 'POST':
         name = request.form['name']
-        print(name)
         description = request.form['description']
-        print(description)
         price = request.form['price']
         type = request.form['category']
         photo1 = request.form['photo1']
@@ -84,6 +84,37 @@ def add_model():
 
     return render_template('add_model_form.html')
 
+
+
+@app.route('/flipflops')
+def flipflops():
+    return render_template('flipflops.html')
+
+
+@app.route('/loafers')
+def loafers():
+    return render_template('loafers.html')
+
+
+@app.route('/sandals')
+def sandals():
+    return render_template('sandals.html')
+
+
+
+@app.route('/slipons')
+def slipons():
+    return render_template('slipons.html')
+
+
+@app.route('/sneakers')
+def sneakers():
+    return render_template('sneakers.html')
+
+
+@app.route('/shoe')
+def shoe():
+    return render_template('shoe.html')
 
 
 
