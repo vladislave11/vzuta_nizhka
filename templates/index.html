@@ -4,31 +4,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <img src="{{ url_for('static', filename='static/logo/g_301907970_ZVaPcSGe9rgYgRMRGUcbf91YxNwB7d2W.jpg') }}" />
-    <style>
-        .carousel {
-            height: 900px !important;
-        }
-        .carousel-inner img {
-        height: 1350px !important;
-            margin: 0 auto;
-        }
-        .carousel-indicators li {
-            border-color: #000;
-        }
-        .carousel-indicators .active {
-            background-color: #000;
-        }
-        .navbar-brand img {
-            margin-right: 120px;
-        }
-        .navbar-nav {
-            margin-right: 45px;
-        }
-        .nav-link {
-            font-size: 125%;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -74,13 +53,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="static/something/Large-536737W2FAY1090_F.jpg" alt="First slide">
+                <img class="d-block w-100" src="static/something/Large-536737W2FAY1090_F.png" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="static/something/Large-536737W2FAY9016_F.jpg" alt="Second slide">
+                <img class="d-block w-100" src="static/something/Large-536737W2FAY9016_F.png" alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="static/something/Large-536737W2FAY1090_F.jpg" alt="Third slide">
+                <img class="d-block w-100" src="static/something/Large-536737W2FAY1090_F.png" alt="Third slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -96,7 +75,7 @@
     <div class="container mt-3">
         <h1>Привіт</h1>
 
-<div class="row mt-5">
+        <div class="row mt-5">
             {% for id in range(length) %}
             <div class="col-4">
                 <div class="card mb-4">
