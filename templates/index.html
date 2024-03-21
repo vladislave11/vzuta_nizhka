@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>VZUTTA_UA</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{{url_for('main')}}">
-            <img src="static/something/Logo_for_shoes_and_bag_template_design_-____PosterMyWall-removebg-preview.png" alt="Logo" width="240" height="75">
+            <img src="static/something/site_logo.png" alt="Logo" width="240" height="75">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,26 +21,26 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/sneakers"><span class="font-weight-bold">Кросівки</span></a>
+                    <a class="nav-link" href="sneakers"><span class="font-weight-bold">Кросівки</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/flipflops"><span class="font-weight-bold">Шльопанці</span></a>
+                    <a class="nav-link" href="flipflops"><span class="font-weight-bold">Шльопанці</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/loafers"><span class="font-weight-bold">Лофери</span></a>
+                    <a class="nav-link" href="loafers"><span class="font-weight-bold">Лофери</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/slipons"><span class="font-weight-bold">Сліпони</span></a>
+                    <a class="nav-link" href="slipons"><span class="font-weight-bold">Сліпони</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/sandals"><span class="font-weight-bold">Босоніжки</span></a>
+                    <a class="nav-link" href="sandals"><span class="font-weight-bold">Босоніжки</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/shoe"><span class="font-weight-bold">Туфлі</span></a>
+                    <a class="nav-link" href="shoe"><span class="font-weight-bold">Туфлі</span></a>
                 </li>
             </ul>
             <a href="{{ url_for('add_model') }}">
-                <img src="static/logo/free-icon-font-add-3914248.png" alt="Logo" width="30" height="30">
+                <img src="static/logo/add_logo.png" alt="Logo" width="30" height="30">
             </a>
         </div>
     </nav>
@@ -53,13 +53,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="static/something/Large-536737W2FAY1090_F.png" alt="First slide">
+                <img class="d-block w-100" src="static/something/balenciaga1.png" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="static/something/Large-536737W2FAY9016_F.png" alt="Second slide">
+                <img class="d-block w-100" src="static/something/balenciaga2.png" alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="static/something/Large-536737W2FAY1090_F.png" alt="Third slide">
+                <img class="d-block w-100" src="static/something/balenciaga1.png" alt="Third slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
