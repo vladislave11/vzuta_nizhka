@@ -11,6 +11,7 @@ def get_db_connection():
 connection = get_db_connection()
 shoe = connection.execute('SELECT * FROM shoes')
 shoes = {}
+
 names = []
 prices = []
 descrips = []
@@ -88,33 +89,39 @@ def add_model():
 
 @app.route('/flipflops')
 def flipflops():
-    return render_template('flipflops.html')
+    length = len(shoes['name'])
+    return render_template('flipflops.html', length = length, shoes = shoes)
 
 
 @app.route('/loafers')
 def loafers():
-    return render_template('loafers.html')
+    length = len(shoes['name'])
+    return render_template('loafers.html', length = length, shoes = shoes)
 
 
 @app.route('/sandals')
 def sandals():
-    return render_template('sandals.html')
+    length = len(shoes['name'])
+    return render_template('sandals.html', length = length, shoes = shoes)
 
 
 
 @app.route('/slipons')
 def slipons():
-    return render_template('slipons.html')
+    length = len(shoes['name'])
+    return render_template('slipons.html', length = length, shoes = shoes)
 
 
 @app.route('/sneakers')
 def sneakers():
-    return render_template('sneakers.html')
+    length = len(shoes['name'])
+    return render_template('sneakers.html', length = length, shoes = shoes)
 
 
 @app.route('/shoe')
 def shoe():
-    return render_template('shoe.html')
+    length = len(shoes['name'])
+    return render_template('shoe.html', length = length, shoes = shoes)
 
 
 
