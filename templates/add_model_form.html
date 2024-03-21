@@ -3,7 +3,7 @@
 <head>
     <title>Додати взуття</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <img src="{{ url_for('static', filename='static/logo/g_301907970_ZVaPcSGe9rgYgRMRGUcbf91YxNwB7d2W.jpg') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
         .form-group {
             margin-bottom: 20px
@@ -14,7 +14,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{{url_for('main')}}">
-            <img src="static/logo/free-icon-font-home-3917743.png" alt="Logo" width="30" height="30">
+            <img src="static/logo/house_logo.png" alt="Logo" width="30" height="30">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
             <ul class="navbar-nav mr-auto">
             </ul>
             <a href="{{ url_for('add_model') }}">
-                <img src="static/logo/free-icon-font-add-3914248.png" alt="Logo" width="30" height="30">
+                <img src="static/logo/add_logo.png" alt="Logo" width="30" height="30">
             </a>
         </div>
     </nav>

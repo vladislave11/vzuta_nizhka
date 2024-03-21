@@ -22,6 +22,12 @@
         }
 
 body {
-    background-image: url("https://img.freepik.com/free-vector/tropical-leaves-background-for-zoom_23-2148580778.jpg") !important;
+    background-image: url("https://instapik.ru/wp-content/uploads/2020/08/white-background.jpg") !important;
+}
+.link-icon {
+    background-image: url('static/logo/favicon-32x32.png');
+    width: 32px;
+    height: 32px;
+    display: inline-block;
 }
 
