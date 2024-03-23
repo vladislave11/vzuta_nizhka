@@ -63,7 +63,6 @@ def main():
 print(shoes)
 
 
-
 @app.route('/add', methods = ['GET', 'POST'])
 def add_model():
     length = len(shoes['name'])
