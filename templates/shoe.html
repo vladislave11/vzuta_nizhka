@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shoe</title>
+    <title>Loafers</title>
     <link rel="shortcut icon" href="static/logo/favicon-32x32.png" type="image/png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -18,7 +18,10 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
+                    <a class="nav-link" href="/"><span class="font-weight-bold">Головна</span></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="sneakers"><span class="font-weight-bold">Кросівки</span></a>
                 </li>
                 <li class="nav-item">
@@ -33,7 +36,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="sandals"><span class="font-weight-bold">Босоніжки</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="shoe"><span class="font-weight-bold">Туфлі</span></a>
                 </li>
             </ul>
@@ -43,18 +46,17 @@
         </div>
     </nav>
 
+    <div class="container mt-3">
 <div class="row mt-5">
             {% for id in range(length) %}
+                {% if shoes['type'][id] == 'Туфлі'%}
             <div class="col-4">
                 <div class="card mb-4">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        {% if shoes['type'][id] == 'Туфлі'%}
                         <img class="card-img-top embed-responsive-item" src= "{{ shoes['photo1'][id] }}" alt="">
-                    </div>
                     <div class="card-body">
 
                         <h2 class="h5 card-title">{{shoes['name'][id]}}</h2>
-                        <p class="card-text"> </p>
+                        <p class="card-text">{{shoes['descriptions'][id]}}</p>
                         <a href="/s/{{ id }}/" class="btn btn-sm btn-primary">Опис</a>
                     </div>
                 </div>
@@ -64,5 +66,6 @@
 
         </div>
     </div>
+
 </body>
 </html>

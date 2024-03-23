@@ -1,15 +1,16 @@
-from flask import Flask, render_template, request, abort, url_for
+from flask import Flask, render_template, request, abort, url_for, redirect
 import sqlite3
 
 app = Flask(__name__)
 
 def get_db_connection():
-    connection = sqlite3.connect(database='vzuta.db')
+    connection = sqlite3.connect(database='vzuta.db', check_same_thread=False)
     connection.row_factory = sqlite3.Row
     return connection
 
 connection = get_db_connection()
 shoe = connection.execute('SELECT * FROM shoes')
+
 shoes = {}
 
 names = []
@@ -25,31 +26,33 @@ photo6s = []
 photo7s = []
 
 
+def create_shoes_dict():
+    shoe = connection.execute('SELECT * FROM shoes')
+    for element in shoe:
+        names.append(element['name'])
+        shoes['name'] = names
+        prices.append(element['price'])
+        shoes['price'] = prices
+        descrips.append(element['description'])
+        shoes['descriptions'] = descrips
+        shoe_type.append(element['type'])
+        shoes['type'] = shoe_type
+        photo1s.append(element['photo1'])
+        shoes['photo1'] = photo1s
+        photo2s.append(element['photo2'])
+        shoes['photo2'] = photo2s
+        photo3s.append(element['photo3'])
+        shoes['photo3'] = photo3s
+        photo4s.append(element['photo4'])
+        shoes['photo4'] = photo4s
+        photo5s.append(element['photo5'])
+        shoes['photo5'] = photo5s
+        photo6s.append(element['photo6'])
+        shoes['photo6'] = photo6s
+        photo7s.append(element['photo7'])
+        shoes['photo7'] = photo7s
 
-for element in shoe:
-    names.append(element['name'])
-    shoes['name'] = names
-    prices.append(element['price'])
-    shoes['price'] = prices
-    descrips.append(element['description'])
-    shoes['descriptions'] = descrips
-    shoe_type.append(element['type'])
-    shoes['type'] = shoe_type
-    photo1s.append(element['photo1'])
-    shoes['photo1'] = photo1s
-    photo2s.append(element['photo2'])
-    shoes['photo2'] = photo2s
-    photo3s.append(element['photo3'])
-    shoes['photo3'] = photo3s
-    photo4s.append(element['photo4'])
-    shoes['photo4'] = photo4s
-    photo5s.append(element['photo5'])
-    shoes['photo5'] = photo5s
-    photo6s.append(element['photo6'])
-    shoes['photo6'] = photo6s
-    photo7s.append(element['photo7'])
-    shoes['photo7'] = photo7s
-
+create_shoes_dict()
 
 @app.route('/')
 def main():
@@ -80,8 +83,9 @@ def add_model():
         photo7 = request.form['photo7']
         cursor.execute("INSERT INTO shoes (name,price,description,type,photo1,photo2,photo3,photo4,photo5,photo6,photo7) VALUES (?,?,?,?,?,?,?,?,?,?,?)", (name,price,description,type,photo1,photo2,photo3,photo4,photo5,photo6,photo7))
         connection.commit()
+        create_shoes_dict()
         connection.close()
-        return render_template("index.html", length = length, shoes = shoes)
+        return render_template("index.html", length = length,shoes = shoes)
 
     return render_template('add_model_form.html')
 
