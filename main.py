@@ -30,7 +30,7 @@ photo7s = []
 def create_shoes_dict():
     shoe = connection.execute('SELECT * FROM shoes')
     for element in shoe:
-        id.append(element('id'))
+        id.append(element['id'])
         shoes['id'] = id
         names.append(element['name'])
         shoes['name'] = names
