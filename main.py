@@ -13,6 +13,7 @@ shoe = connection.execute('SELECT * FROM shoes')
 
 shoes = {}
 
+id = []
 names = []
 prices = []
 descrips = []
@@ -29,6 +30,8 @@ photo7s = []
 def create_shoes_dict():
     shoe = connection.execute('SELECT * FROM shoes')
     for element in shoe:
+        id.append(element('id'))
+        shoes['id'] = id
         names.append(element['name'])
         shoes['name'] = names
         prices.append(element['price'])

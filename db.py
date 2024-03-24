@@ -5,6 +5,7 @@ import sqlite3
 # try:
 #     sqlite_connection = sqlite3.connect("vzuta.db")
 #     sqlite_create_table_query = '''  CREATE TABLE IF NOT EXISTS shoes(
+#                                     id INTEGER PRIMARY KEY,
 #                                     name TEXT,
 #                                     price INTEGER,
 #                                     description TEXT,
@@ -42,5 +43,7 @@ def add_test_item(name,price,description,type,photo1,photo2,photo3,photo4,photo5
     sqlite_connection.close()
 
 
-add_test_item("Лофери2", 700, "Ще одні Лофери", "Лофери", 'https://i.im.ge/2024/03/23/RnATCF.lofers2.jpeg','','','','','','')
+add_test_item("Кросівки", 800, "Новинка кросівки", "Кросівки", 'https://i.im.ge/2024/03/24/WQljZf.img-8766-1.jpeg','','','','','','')
+add_test_item("Босоніжки", 400, "Новинка босоніжки", "Босоніжки", 'https://i.im.ge/2024/03/24/WQlPG0.b16b3ca8f3924c9143e6451af4f5a6b9867a588c-original.jpeg','','','','','','')
+add_test_item("Туфлі", 750, "Туфлі чоловічі", "Босоніжки", 'https://i.im.ge/2024/03/24/WQlAAc.shoe1.jpeg','','','','','','')
 print('SUCCESSFULLY ADDED')
