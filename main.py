@@ -130,6 +130,21 @@ def shoe():
     return render_template('shoe.html', length = length, shoes = shoes)
 
 
+@app.route('/models/<int:model_id>/')
+def models(model_id):
+
+    model = get_models(model_id)
+    print(model)
+    return render_template('models.html', model=model, )
+
+def get_models(model_id):
+    connection = get_db_connection()
+    post = connection.execute("SELECT * FROM shoes WHERE id = ?", (model_id,)).fetchone()
+    connection.close()
+    if post is None:
+        abort(404)
+    return post
+
 
 
 app.run(port=5000, host="0.0.0.0", debug=True)

@@ -78,7 +78,7 @@
 
     <div class="container mt-3">
         <div class="row mt-5">
-            {% for id in range(length) %}
+            {% for id in range(1, length) %}
             <div class="col-4">
                 <div class="card mb-3">
                     <div class="embed-responsive embed-responsive-16by9">
@@ -87,7 +87,7 @@
                     <div class="card-body">
                         <h2 class="h5 card-title">{{shoes['name'][id]}}</h2>
                         <p class="card-text"> </p>
-                        <a href="/s/{{ id }}/" class="btn btn-outline-secondary">Опис</a>
+                        <a href="{{ url_for('models', model_id=id) }}" class="btn btn-outline-secondary">Опис</a>
                     </div>
                 </div>
             </div>
